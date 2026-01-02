@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeatBox - Hot Food Anywhere. In 60 Seconds.</title>
+    <meta name="description"
+        content="A self-heating lunch box for India. No electricity. No fire. No microwave. Get early access to the future of portable food heating.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="main.css">
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+</head>
+
+<body>
+    <!-- Header/Navigation -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="header-logo">
+                <img src="logo.png" alt="HeatBox Logo" class="nav-logo">
+                <span class="logo-text">HeatBox</span>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#problem">Problem</a></li>
+                    <li><a href="#how-it-works">Solution</a></li>
+                    <li><a href="#safety">Safety</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="#early-access" class="nav-cta">Early Access</a>
+            </div>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <img src="logo.png" alt="HeatBox Logo" class="logo" id="logo">
+
+                <h1 class="hero-title">
+                    Hot food anywhere.<br>
+                    <span class="gradient-text">In 60 seconds.</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    A self-heating lunch box. No electricity. No fire. No microwave.
+                </p>
+
+                <div class="trust-badge">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 0L10.472 5.528L16 8L10.472 10.472L8 16L5.528 10.472L0 8L5.528 5.528L8 0Z"
+                            fill="currentColor" />
+                    </svg>
+                    <span>Prototype in development • Launching soon in India</span>
+                </div>
+
+                <button class="cta-button" onclick="scrollToForm()">
+                    Get Early Access
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+
+                <div class="hero-image-container">
+                    <div class="hero-image-placeholder">
+                        <svg width="120" height="120" viewBox="0 0 120 120" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <rect x="20" y="30" width="80" height="60" rx="8" fill="url(#grad1)" opacity="0.2" />
+                            <rect x="25" y="35" width="70" height="50" rx="6" stroke="url(#grad2)" stroke-width="2" />
+                            <circle cx="60" cy="60" r="15" fill="url(#grad3)" />
+                            <defs>
+                                <linearGradient id="grad1" x1="20" y1="30" x2="100" y2="90">
+                                    <stop offset="0%" style="stop-color:#FF6B35;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#F7931E;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="grad2" x1="25" y1="35" x2="95" y2="85">
+                                    <stop offset="0%" style="stop-color:#FF6B35;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#F7931E;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="grad3" x1="45" y1="45" x2="75" y2="75">
+                                    <stop offset="0%" style="stop-color:#FF6B35;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#F7931E;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <p class="placeholder-text">Product visualization coming soon</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="problem-section">
+        <div class="container">
+            <h2 class="section-title">The problem we're solving</h2>
+
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 4L20 12L28 16L20 20L16 28L12 20L4 16L12 12L16 4Z" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3>Cold food during travel</h3>
+                    <p>Long journeys mean settling for cold, unappetizing meals</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="6" y="8" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2" />
+                            <path d="M10 8V6C10 4.89543 10.8954 4 12 4H20C21.1046 4 22 4.89543 22 6V8"
+                                stroke="currentColor" stroke-width="2" />
+                            <line x1="16" y1="14" x2="16" y2="18" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3>No microwave in hostels</h3>
+                    <p>Students struggle with limited access to heating facilities</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="4" y="10" width="24" height="14" rx="2" stroke="currentColor" stroke-width="2" />
+                            <path d="M8 10V8C8 6.89543 8.89543 6 10 6H22C23.1046 6 24 6.89543 24 8V10"
+                                stroke="currentColor" stroke-width="2" />
+                            <circle cx="16" cy="17" r="2" fill="currentColor" />
+                        </svg>
+                    </div>
+                    <h3>Office lunch gets boring</h3>
+                    <p>Limited options for fresh, warm homemade meals at work</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 6V16L22 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="2" />
+                            <path d="M8 8L4 4M24 8L28 4" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3>No power available</h3>
+                    <p>Outdoor activities and remote locations lack electricity</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works-section">
+        <div class="container">
+            <h2 class="section-title">How it works</h2>
+            <p class="section-subtitle">Simple. Safe. Effective.</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-visual">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="20" y="25" width="40" height="30" rx="4" stroke="url(#stepGrad1)"
+                                stroke-width="2" />
+                            <rect x="35" y="15" width="10" height="15" fill="url(#stepGrad1)" opacity="0.6" />
+                            <defs>
+                                <linearGradient id="stepGrad1" x1="20" y1="25" x2="60" y2="55">
+                                    <stop offset="0%" style="stop-color:#FF6B35" />
+                                    <stop offset="100%" style="stop-color:#F7931E" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h3>Insert heating cartridge</h3>
+                    <p>Place the sealed cartridge into the designated slot</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-visual">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M30 40H50M50 40L45 35M50 40L45 45" stroke="url(#stepGrad2)" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <circle cx="40" cy="40" r="15" stroke="url(#stepGrad2)" stroke-width="2" />
+                            <defs>
+                                <linearGradient id="stepGrad2" x1="25" y1="25" x2="55" y2="55">
+                                    <stop offset="0%" style="stop-color:#FF6B35" />
+                                    <stop offset="100%" style="stop-color:#F7931E" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h3>Pull the activation tab</h3>
+                    <p>One simple pull starts the heating process</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-visual">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M40 20C40 20 35 25 35 30C35 33.866 38.134 37 42 37C45.866 37 49 33.866 49 30C49 25 44 20 44 20"
+                                fill="url(#stepGrad3)" opacity="0.6" />
+                            <rect x="25" y="37" width="30" height="20" rx="3" stroke="url(#stepGrad3)"
+                                stroke-width="2" />
+                            <defs>
+                                <linearGradient id="stepGrad3" x1="25" y1="20" x2="55" y2="57">
+                                    <stop offset="0%" style="stop-color:#FF6B35" />
+                                    <stop offset="100%" style="stop-color:#F7931E" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h3>Enjoy warm food</h3>
+                    <p>Your meal is ready in 30–60 seconds</p>
+                </div>
+            </div>
+
+            <div class="safety-note">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 0L12.5 7.5L20 10L12.5 12.5L10 20L7.5 12.5L0 10L7.5 7.5L10 0Z" fill="currentColor" />
+                </svg>
+                <p>Uses a safe, sealed heating reaction already used globally in travel & military meals.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section id="comparison" class="comparison-section">
+        <div class="container">
+            <h2 class="section-title">Why HeatBox is different</h2>
+
+            <div class="comparison-table">
+                <div class="comparison-header">
+                    <div class="comparison-cell header-cell">
+                        <span class="gradient-text">HeatBox</span>
+                    </div>
+                    <div class="comparison-cell header-cell secondary">
+                        Normal Lunch Box
+                    </div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell">
+                        <svg class="check-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>Self-heating</span>
+                    </div>
+                    <div class="comparison-cell secondary">
+                        <svg class="cross-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>Needs microwave</span>
+                    </div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell">
+                        <svg class="check-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>Works anywhere</span>
+                    </div>
+                    <div class="comparison-cell secondary">
+                        <svg class="cross-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>Needs electricity</span>
+                    </div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell">
+                        <svg class="check-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>Reusable</span>
+                    </div>
+                    <div class="comparison-cell secondary">
+                        <svg class="cross-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>Disposable</span>
+                    </div>
+                </div>
+
+                <div class="comparison-row">
+                    <div class="comparison-cell">
+                        <svg class="check-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>No flame</span>
+                    </div>
+                    <div class="comparison-cell secondary">
+                        <svg class="cross-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>Unsafe hacks</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Section -->
+    <section id="safety" class="safety-section">
+        <div class="container">
+            <h2 class="section-title">Built with safety first.</h2>
+
+            <div class="safety-grid">
+                <div class="safety-card">
+                    <div class="safety-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 5L25 15L35 20L25 25L20 35L15 25L5 20L15 15L20 5Z" stroke="currentColor"
+                                stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h3>Food never touches chemicals</h3>
+                    <p>Complete separation ensures your meal stays pure and safe</p>
+                </div>
+
+                <div class="safety-card">
+                    <div class="safety-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="12" stroke="currentColor" stroke-width="2" />
+                            <path d="M20 14V20L24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3>Controlled heating</h3>
+                    <p>Warm, not boiling — perfect temperature for immediate consumption</p>
+                </div>
+
+                <div class="safety-card">
+                    <div class="safety-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="10" y="12" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2" />
+                            <path d="M15 12V10C15 8.89543 15.8954 8 17 8H23C24.1046 8 25 8.89543 25 10V12"
+                                stroke="currentColor" stroke-width="2" />
+                            <line x1="20" y1="18" x2="20" y2="22" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3>Pressure-release vents</h3>
+                    <p>Engineered safety mechanisms prevent any pressure buildup</p>
+                </div>
+
+                <div class="safety-card">
+                    <div class="safety-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="15" r="5" stroke="currentColor" stroke-width="2" />
+                            <path d="M12 35C12 29.4772 16.4772 25 22 25H18C23.5228 25 28 29.4772 28 35"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3>Designed for everyday users</h3>
+                    <p>Simple, intuitive operation requires no special training</p>
+                </div>
+            </div>
+
+            <div class="safety-footer">
+                <p>Full safety documentation will be shared before launch.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience Section -->
+    <section id="audience" class="audience-section">
+        <div class="container">
+            <h2 class="section-title">Who it's for</h2>
+
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <div class="audience-emoji">🎒</div>
+                    <h3>Students & hostels</h3>
+                    <p>Enjoy homemade meals without access to a kitchen or microwave</p>
+                </div>
+
+                <div class="audience-card">
+                    <div class="audience-emoji">🚆</div>
+                    <h3>Travelers</h3>
+                    <p>Hot meals on trains, buses, and long journeys without stops</p>
+                </div>
+
+                <div class="audience-card">
+                    <div class="audience-emoji">🏕️</div>
+                    <h3>Campers</h3>
+                    <p>Warm food in remote locations without fire or electricity</p>
+                </div>
+
+                <div class="audience-card">
+                    <div class="audience-emoji">🏢</div>
+                    <h3>Office lunch users</h3>
+                    <p>Fresh, warm homemade meals at your desk every day</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <h2 class="section-title">Expected pricing</h2>
+            <p class="section-subtitle">Transparent from day one</p>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-label">One-time purchase</div>
+                    <h3>HeatBox</h3>
+                    <div class="price-range">₹299 – ₹499</div>
+                    <p>Reusable container designed to last</p>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="pricing-label">Recurring</div>
+                    <h3>Heating Cartridges</h3>
+                    <div class="price-range">₹5 – ₹10 <span class="price-unit">each</span></div>
+                    <p>Affordable per-use heating solution</p>
+                </div>
+            </div>
+
+            <div class="pricing-note">
+                <p>Final pricing will be confirmed closer to launch based on production costs and user feedback.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Early Access Form Section -->
+    <section id="early-access" class="form-section">
+        <div class="container">
+            <div class="form-container">
+                <h2 class="section-title">Join the waitlist</h2>
+                <p class="section-subtitle">Be the first to know when HeatBox launches</p>
+
+                <form id="waitlistForm" class="waitlist-form">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">City *</label>
+                        <input type="text" id="city" name="city" required placeholder="Your city">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="intendedUse">Intended Use *</label>
+                        <select id="intendedUse" name="intendedUse" required>
+                            <option value="">Select an option</option>
+                            <option value="student">Student / Hostel</option>
+                            <option value="travel">Travel</option>
+                            <option value="office">Office Lunch</option>
+                            <option value="camping">Camping / Outdoor</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="priceComfort">Price Comfort *</label>
+                        <select id="priceComfort" name="priceComfort" required>
+                            <option value="">Select your budget range</option>
+                            <option value="under-300">Under ₹300</option>
+                            <option value="300-500">₹300 - ₹500</option>
+                            <option value="500-700">₹500 - ₹700</option>
+                            <option value="above-700">Above ₹700</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number (Optional)</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX">
+                    </div>
+
+                    <button type="submit" class="submit-button" id="submitButton">
+                        <span id="buttonText">Join the Waitlist</span>
+                        <span id="buttonLoader" class="button-loader" style="display: none;">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-dasharray="50" stroke-dashoffset="25">
+                                    <animateTransform attributeName="transform" type="rotate" from="0 10 10"
+                                        to="360 10 10" dur="1s" repeatCount="indefinite" />
+                                </circle>
+                            </svg>
+                        </span>
+                    </button>
+
+                    <div id="formMessage" class="form-message"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently asked questions</h2>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Is it safe?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. The heating mechanism is completely sealed and separate from your food. This technology
+                            is already used in military rations and travel meals worldwide. We're designing with safety
+                            as the top priority.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>How hot does food get?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>HeatBox warms food to a comfortable eating temperature (around 60-70°C) — warm enough to
+                            enjoy, but not boiling. The heating is controlled and consistent.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Is it reusable?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! The HeatBox container is fully reusable. Only the heating cartridges are single-use and
+                            need to be replaced after each heating cycle. This keeps the cost per use very low.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Is it allowed during travel?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We're working with regulatory authorities to ensure HeatBox meets all safety standards for
+                            public transport. Similar products are already permitted on trains and flights in other
+                            countries.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>When will it launch?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We're currently in the prototype development phase. Launch timing will depend on safety
+                            testing, regulatory approvals, and production setup. Early access members will be the first
+                            to know.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="HeatBox Logo" class="footer-logo">
+                    <p class="footer-tagline">Hot food anywhere. In 60 seconds.</p>
+                    <p class="footer-made-in">Made in India (soon)</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Founder</h4>
+                    <p>Made by Team HeatBox</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <a href="mailto:heatboxindia@gmail.com" class="footer-link">heatboxindia@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="disclaimer">This is a pre-launch product under development.</p>
+                <p class="copyright">© 2026 HeatBox. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
